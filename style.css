@@ -982,11 +982,12 @@ h3 {
 
 .site-footer .validation-link {
   display: inline-flex;
-  width: 32px;
-  height: 32px;
+  min-height: 32px;
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
+  gap: 6px;
+  padding: 0 8px;
   border: 1px solid var(--line);
   color: var(--green);
 }
