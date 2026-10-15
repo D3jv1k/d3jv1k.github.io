@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Temné fantasy portfolio Davida Pietroňe ve stylu pixel-art RPG.">
+  <meta name="theme-color" content="#0b0d12">
+  <title>David Pietroň — Ztracené království kódu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Přeskočit na hru</a>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="David Pietroň, začátek">
+      <span class="brand-crest" aria-hidden="true">DP</span>
+      <span>KRONIKY KÓDU<small>osobní dobrodružství</small></span>
+    </a>
+    <nav aria-label="Hlavní navigace">
+      <a href="#quest">Příběh</a>
+      <a href="#projects">Projekty</a>
+      <a href="#inventory">Výbava</a>
+      <a href="#guild">Cech</a>
+    </nav>
+    <span class="save-status"><i aria-hidden="true"></i> ULOŽENO</span>
+  </header>
+
+  <main id="main">
+    <section class="game-screen" id="home" aria-labelledby="hero-title">
+      <div class="hud">
+        <div class="player-info">
+          <span class="player-avatar" aria-hidden="true">D</span>
+          <span><strong>DAVID</strong><small>UČEDNÍK KÓDU · ÚROVEŇ 01</small></span>
+        </div>
+        <div class="xp-info">
+          <span>CESTA ZAČÍNÁ</span>
+          <div class="xp-track" role="img" aria-label="Zkušenosti: 20 ze 100">
+            <span></span>
+          </div>
+          <small>20 / 100 XP</small>
+        </div>
+        <span class="hud-rune" aria-hidden="true">✦</span>
+      </div>
+
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="live-dot"></span> NOVÁ VÝPRAVA ODEMČENA</p>
+          <h1 id="hero-title">Ztracené<br>království<br><span>kódu</span></h1>
+          <p class="intro">Jsem David — začínající vývojář na první výpravě. Učím se stavět weby a tohle je mapa mé
+            cesty.</p>
+          <a class="pixel-button" href="#quest">Vstoupit do světa <span aria-hidden="true">▶</span></a>
+        </div>
+        <figure class="world-art">
+          <div>
+            <img src="assets/fantasy-realm.svg" alt="Pixelová krajina: hrad na kopci, měsíc a les v temné fantasy noci"
+              width="640" height="480">
+            <span class="world-coordinate" aria-hidden="true">X: 01 / Y: 08</span>
+          </div>
+          <figcaption><span>LOKACE 001</span> Údolí prvního řádku</figcaption>
+        </figure>
+      </div>
+
+      <div class="screen-footer">
+        <span><i aria-hidden="true">◆</i> HLAVNÍ ÚKOL: NAUČIT SE TVOŘIT</span>
+        <a href="#quest">ZOBRAZIT MAPU <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <section class="quest-area" id="quest" aria-labelledby="quest-title">
+      <div class="section-heading">
+        <span class="section-kicker">DENÍK VÝPRAVY · 01</span>
+        <h2 id="quest-title">Aktivní <span>úkol</span></h2>
+      </div>
+      <article class="quest-card">
+        <div class="quest-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" role="img">
+            <path d="M9 10h30v27H9zM15 17h18M15 23h12M15 29h8" />
+            <path d="m30 31 4 4 8-10" />
+          </svg>
+        </div>
+        <div class="quest-copy">
+          <p class="quest-type">HLAVNÍ PŘÍBĚH · PRÁVĚ PROBÍHÁ</p>
+          <h3>Porozumět řeči webu</h3>
+          <p>Objevuju, jak se skládají webové stránky, co jim dává styl a jak je postupně proměnit v něco vlastního.</p>
+          <blockquote>„Každý mistr byl kdysi začátečník.“</blockquote>
+        </div>
+        <span class="quest-reward"><span aria-hidden="true">✦</span> +100 ZKUŠENOSTÍ</span>
+      </article>
+      <details class="secret-room">
+        <summary><span aria-hidden="true">▣</span> Našel jsi tajnou místnost? Klikni a nahlédni dovnitř.</summary>
+        <p>Každý web začíná prázdnou stránkou. Tenhle už má svůj první svět — a další levely teprve přijdou.</p>
+      </details>
+    </section>
+
+    <section class="projects-area" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading">
+        <span class="section-kicker">OBJEVENÉ LOKACE · 02</span>
+        <h2 id="projects-title">Moje <span>projekty</span></h2>
+        <p>Vyber lokaci a vydej se na další stránku.</p>
+      </div>
+      <div class="projects-grid">
+        <a class="project-card" href="https://d3jv1k.github.io/" target="_blank" rel="noopener noreferrer">
+          <span class="project-id">LOKACE 001</span>
+          <span class="project-preview portfolio-preview" aria-hidden="true">
+            <span class="preview-top"><i></i><i></i><i></i><b>DAVID.EXE</b></span>
+            <span class="preview-scene">
+              <span class="preview-copy"><i>OSOBNÍ WEB</i><b>Moje<br>portfolio</b><em></em><em></em></span>
+              <span class="preview-avatar">D</span>
+            </span>
+          </span>
+          <span class="project-info">
+            <span><strong>Osobní portfolio</strong><small>d3jv1k.github.io</small></span>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </span>
+          <span class="project-visit">VSTOUPIT DO LOKACE</span>
+        </a>
+
+        <a class="project-card" href="https://d3jv1k.github.io/projekt-web1/" target="_blank" rel="noopener noreferrer">
+          <span class="project-id">LOKACE 002</span>
+          <span class="project-preview web1-preview" aria-hidden="true">
+            <span class="preview-top"><i></i><i></i><i></i><b>PROJEKT_WEB1</b></span>
+            <span class="preview-scene">
+              <span class="preview-mountain"></span>
+              <span class="preview-sun"></span>
+              <span class="preview-code">&lt;web&gt;<br><b>01</b><br>&lt;/web&gt;</span>
+            </span>
+          </span>
+          <span class="project-info">
+            <span><strong>Projekt Web 1</strong><small>d3jv1k.github.io/projekt-web1</small></span>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </span>
+          <span class="project-visit">VSTOUPIT DO LOKACE</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="inventory-area" id="inventory" aria-labelledby="inventory-title">
+      <div class="section-heading">
+        <span class="section-kicker">INVENTÁŘ HRÁČE · 03</span>
+        <h2 id="inventory-title">Výbava <span>učedníka</span></h2>
+        <p>Základní nástroje, které právě poznávám.</p>
+      </div>
+      <div class="inventory-grid">
+        <article class="item-card">
+          <span class="item-number">ITEM 001</span>
+          <div class="item-art html-art" aria-hidden="true">&lt;/&gt;</div>
+          <h3>HTML</h3>
+          <p class="item-type">KOUZLO STRUKTURY</p>
+          <p>Stavím kostru stránky a dávám obsahu smysl.</p>
+          <span class="item-rarity"><i></i> ZÁKLADNÍ VÝBAVA</span>
+        </article>
+        <article class="item-card">
+          <span class="item-number">ITEM 002</span>
+          <div class="item-art css-art" aria-hidden="true">✳</div>
+          <h3>CSS</h3>
+          <p class="item-type">KOUZLO VZHLEDU</p>
+          <p>Oblékám stránku do barev, rozvržení a stylu.</p>
+          <span class="item-rarity"><i></i> ZÁKLADNÍ VÝBAVA</span>
+        </article>
+        <article class="item-card locked-card">
+          <span class="item-number">ITEM ???</span>
+          <div class="item-art locked-art" aria-hidden="true">?</div>
+          <h3>Další schopnost</h3>
+          <p class="item-type">ZAMČENO</p>
+          <p>Nová dovednost se objeví, až nastřádám další zkušenosti.</p>
+          <span class="item-rarity"><i></i> NEZNÁMÁ VÝBAVA</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="guild-area" id="guild" aria-labelledby="guild-title">
+      <div class="guild-emblem" aria-hidden="true">✧</div>
+      <div>
+        <span class="section-kicker">NÁBOR DO CECHU · 04</span>
+        <h2 id="guild-title">Každá výprava<br>je lepší <span>ve dvou.</span></h2>
+        <p>Máš radu, nápad nebo vlastní quest? Najdeš mě na GitHubu.</p>
+        <a class="pixel-button" href="https://github.com/D3jv1k" target="_blank" rel="noopener noreferrer">
+          <img class="contact-avatar" src="https://github.com/D3jv1k.png" alt="" width="32" height="32" loading="lazy">
+          Najít hráče Davida <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <span class="guild-stamp" aria-hidden="true">PŘIDEJ SE<br>K VÝPRAVĚ</span>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <span>DAVID PIETROŇ <i aria-hidden="true">✦</i> 2026</span>
+    <span>ULOŽENO V ÚDOLÍ PRVNÍHO ŘÁDKU</span>
+    <a href="#home">ZPĚT NA ZAČÁTEK ↑</a>
+    <a class="validation-link" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fd3jv1k.github.io%2FPortfolio-D3jv1k%2F#textarea"
+      target="_blank" rel="noopener noreferrer" aria-label="Ověřit validitu stránky ve W3C Nu HTML Checkeru (otevře se v nové kartě)">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="m8 12 2.5 2.5L16 9"></path>
+      </svg>
+    </a>
+    <a class="validation-link" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fd3jv1k.github.io%2FPortfolio-D3jv1k%2F#textarea"
+      target="_blank" rel="noopener noreferrer" aria-label="Otevřít zadanou stránku W3C Nu HTML Checkeru (otevře se v nové kartě)">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M5 3h14l-1.5 17L12 22l-5.5-2L5 3Z"></path>
+        <path d="M9 8h6M8.5 12h7M9 16h5"></path>
+      </svg>
+    </a>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,1287 @@
+:root {
+  color-scheme: dark;
+  --void: #090b10;
+  --night: #0e1119;
+  --panel: #151a24;
+  --panel-raised: #1b2230;
+  --ink: #e8e3d4;
+  --muted: #9a9eaa;
+  --green: #9caf70;
+  --green-dark: #647d4a;
+  --green-bright: #c3d58a;
+  --gold: #d4ad63;
+  --gold-dark: #8d6d39;
+  --line: #343947;
+  --blue: #798cb3;
+  --pixel-edge: 4px solid var(--line);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  padding: 0 34px;
+  background:
+    radial-gradient(ellipse at 50% -20%, rgba(84, 101, 137, 0.18), transparent 55%),
+    linear-gradient(90deg, transparent 49.9%, rgba(255, 255, 255, 0.015) 50%, transparent 50.1%),
+    var(--void);
+  color: var(--ink);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 5;
+  padding: 9px 12px;
+  transform: translateY(-160%);
+  background: var(--gold);
+  color: var(--void);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.topbar,
+.site-footer {
+  width: min(100%, 1160px);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar {
+  min-height: 82px;
+  gap: 25px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+.brand-crest {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 3px solid var(--gold-dark);
+  background: var(--panel);
+  color: var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.85rem;
+  box-shadow: 3px 3px 0 var(--void);
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+}
+
+.brand small {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.57rem;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+}
+
+nav a,
+.site-footer a {
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 150ms ease;
+}
+
+nav a:hover,
+.site-footer a:hover {
+  color: var(--gold);
+}
+
+.save-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--green);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+}
+
+.save-status i,
+.live-dot,
+.item-rarity i {
+  width: 7px;
+  height: 7px;
+  background: var(--green);
+  box-shadow: 0 0 10px rgba(156, 175, 112, 0.7);
+}
+
+main {
+  width: min(100%, 1160px);
+  margin: 0 auto;
+}
+
+.game-screen {
+  position: relative;
+  margin: 36px 0 84px;
+  padding: 24px 42px 0;
+  border: var(--pixel-edge);
+  background:
+    linear-gradient(135deg, rgba(121, 140, 179, 0.06), transparent 48%),
+    var(--night);
+  box-shadow: 8px 8px 0 var(--void), 10px 10px 0 #252b39;
+}
+
+.hud {
+  display: flex;
+  min-height: 65px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 0 0 17px;
+  border-bottom: 1px solid var(--line);
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.player-avatar {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 2px solid var(--gold-dark);
+  background: var(--panel-raised);
+  color: var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  image-rendering: pixelated;
+}
+
+.player-info strong,
+.player-info small {
+  display: block;
+}
+
+.player-info strong {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+}
+
+.player-info small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.57rem;
+}
+
+.xp-info {
+  display: grid;
+  width: min(230px, 36%);
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2px 12px;
+  color: var(--muted);
+  font-size: 0.57rem;
+  letter-spacing: 0.06em;
+}
+
+.xp-info > span {
+  color: var(--gold);
+}
+
+.xp-info > small {
+  text-align: right;
+}
+
+.xp-track {
+  height: 8px;
+  padding: 2px;
+  border: 1px solid var(--line);
+  background: var(--void);
+}
+
+.xp-track span {
+  display: block;
+  width: 20%;
+  height: 100%;
+  background: repeating-linear-gradient(90deg, var(--gold) 0, var(--gold) 8px, transparent 8px, transparent 10px);
+}
+
+.hud-rune {
+  color: var(--gold);
+  font-size: 1.3rem;
+  animation: rune-glow 3s ease-in-out infinite;
+}
+
+.hero {
+  display: grid;
+  min-height: 510px;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.95fr);
+  align-items: center;
+  gap: 35px;
+  padding: 38px 0 32px;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  padding: 15px 0;
+}
+
+.eyebrow,
+.section-kicker,
+.quest-type,
+.item-number,
+.item-type,
+.item-rarity,
+.screen-footer {
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 17px;
+  color: var(--green);
+}
+
+.live-dot {
+  display: inline-block;
+  animation: rune-glow 2.5s ease-in-out infinite;
+}
+
+h1,
+h2,
+h3,
+p,
+figure {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  letter-spacing: -0.06em;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.5rem, 7vw, 6.3rem);
+  font-weight: 500;
+  line-height: 0.92;
+  text-shadow: 4px 4px 0 #252a37;
+}
+
+h1 span,
+h2 span {
+  color: var(--gold);
+}
+
+.intro {
+  max-width: 440px;
+  margin-bottom: 25px;
+  color: var(--muted);
+  font-size: 0.83rem;
+}
+
+.pixel-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 8px 15px;
+  border: 2px solid var(--gold-dark);
+  background: linear-gradient(180deg, #d4ad63, #ad8242);
+  color: #17130d;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 4px 4px 0 var(--void);
+  transition: transform 130ms steps(2), filter 130ms ease;
+}
+
+.pixel-button:hover {
+  transform: translate(2px, 2px);
+  filter: brightness(1.13);
+  box-shadow: 2px 2px 0 var(--void);
+}
+
+.world-art {
+  position: relative;
+  margin: 0;
+  padding: 9px;
+  border: 2px solid #495166;
+  background: #10131b;
+  box-shadow: 7px 7px 0 var(--void), 9px 9px 0 #353b4e;
+  transform: rotate(1deg);
+}
+
+.world-art::before,
+.world-art::after {
+  position: absolute;
+  z-index: 1;
+  width: 12px;
+  height: 12px;
+  content: "";
+  background: var(--gold);
+  box-shadow: 0 0 14px rgba(212, 173, 99, 0.65);
+}
+
+.world-art::before {
+  top: 18%;
+  left: 13%;
+}
+
+.world-art::after {
+  top: 30%;
+  right: 16%;
+  width: 5px;
+  height: 5px;
+}
+
+.world-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.world-art figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 4px 2px;
+  color: var(--ink);
+  font-size: 0.6rem;
+}
+
+.world-art figcaption span,
+.world-coordinate {
+  color: var(--gold);
+  font-size: 0.52rem;
+  letter-spacing: 0.08em;
+}
+
+.world-coordinate {
+  position: absolute;
+  top: 17px;
+  left: 17px;
+  padding: 3px 5px;
+  background: rgba(9, 11, 16, 0.7);
+}
+
+.screen-footer {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.57rem;
+}
+
+.screen-footer i {
+  color: var(--gold);
+  font-style: normal;
+}
+
+.screen-footer a {
+  color: var(--green);
+}
+
+.quest-area,
+.projects-area,
+.inventory-area {
+  margin: 0 0 86px;
+}
+
+.section-heading {
+  margin-bottom: 24px;
+}
+
+.section-kicker {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: var(--green);
+  font-size: 0.58rem;
+}
+
+h2 {
+  margin-bottom: 9px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 5vw, 3.3rem);
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.section-heading > p,
+.guild-area p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  display: block;
+  min-width: 0;
+  padding: 14px;
+  border: 2px solid var(--line);
+  background: var(--panel);
+  box-shadow: 5px 5px 0 var(--void);
+  transition: transform 150ms steps(2), border-color 150ms ease, background 150ms ease;
+}
+
+.project-card:hover {
+  transform: translate(2px, 2px);
+  border-color: var(--gold-dark);
+  background: var(--panel-raised);
+  box-shadow: 3px 3px 0 var(--void);
+}
+
+.project-card:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 5px;
+}
+
+.project-id {
+  display: block;
+  margin: 0 0 9px;
+  color: var(--gold);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.project-preview {
+  display: block;
+  overflow: hidden;
+  border: 1px solid #454b56;
+  background: var(--void);
+}
+
+.preview-top {
+  display: flex;
+  height: 26px;
+  align-items: center;
+  gap: 5px;
+  padding: 0 8px;
+  border-bottom: 1px solid #343947;
+  background: #1b1f29;
+}
+
+.preview-top i {
+  width: 6px;
+  height: 6px;
+  background: #9c6a60;
+}
+
+.preview-top i:nth-child(2) {
+  background: var(--gold-dark);
+}
+
+.preview-top i:nth-child(3) {
+  background: var(--green-dark);
+}
+
+.preview-top b {
+  overflow: hidden;
+  margin-left: 7px;
+  color: #858a96;
+  font-size: 0.48rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.preview-scene {
+  position: relative;
+  display: block;
+  height: 154px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 76% 20%, rgba(212, 173, 99, 0.28), transparent 27%),
+    linear-gradient(145deg, #273143, #171e2a 62%, #20271f);
+}
+
+.portfolio-preview .preview-scene {
+  background:
+    linear-gradient(0deg, #273126 0, #273126 22%, transparent 22%),
+    radial-gradient(ellipse at 73% 25%, rgba(212, 173, 99, 0.24), transparent 31%),
+    linear-gradient(135deg, #273143, #171d29 65%, #24241f);
+}
+
+.preview-copy {
+  position: absolute;
+  top: 23px;
+  left: 22px;
+  display: grid;
+  gap: 5px;
+}
+
+.preview-copy i {
+  color: var(--green);
+  font-size: 0.46rem;
+  font-style: normal;
+  letter-spacing: 0.14em;
+}
+
+.preview-copy b {
+  color: #e8e3d4;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.preview-copy em {
+  width: 75px;
+  height: 3px;
+  background: #626a70;
+}
+
+.preview-copy em:last-child {
+  width: 51px;
+}
+
+.preview-avatar {
+  position: absolute;
+  right: 27px;
+  bottom: 20px;
+  display: grid;
+  width: 51px;
+  height: 51px;
+  place-items: center;
+  border: 2px solid var(--gold-dark);
+  background: #20252d;
+  color: var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.35);
+}
+
+.web1-preview .preview-scene {
+  background:
+    linear-gradient(0deg, #1b2925 0, #1b2925 25%, transparent 25%),
+    linear-gradient(160deg, transparent 0, transparent 47%, #34423c 48%, #34423c 62%, transparent 63%),
+    linear-gradient(25deg, transparent 0, transparent 53%, #283c3a 54%, #283c3a 68%, transparent 69%),
+    linear-gradient(140deg, #273143, #171e2a);
+}
+
+.preview-mountain {
+  position: absolute;
+  right: 16%;
+  bottom: 20%;
+  width: 60px;
+  height: 60px;
+  transform: rotate(45deg);
+  border-top: 2px solid #728271;
+  border-left: 2px solid #728271;
+  background: #35423c;
+}
+
+.preview-sun {
+  position: absolute;
+  top: 20px;
+  right: 20%;
+  width: 19px;
+  height: 19px;
+  background: var(--gold);
+  box-shadow: 0 0 19px rgba(212, 173, 99, 0.4);
+}
+
+.preview-code {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  color: #d0d4bf;
+  font-size: 0.63rem;
+  line-height: 1.5;
+}
+
+.preview-code b {
+  color: var(--green-bright);
+  font-size: 1.3rem;
+}
+
+.project-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 13px 2px 10px;
+}
+
+.project-info strong,
+.project-info small {
+  display: block;
+}
+
+.project-info strong {
+  color: var(--ink);
+  font-size: 0.81rem;
+}
+
+.project-info small {
+  overflow: hidden;
+  max-width: 100%;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.58rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-arrow {
+  flex: 0 0 auto;
+  color: var(--gold);
+  font-size: 1.1rem;
+}
+
+.project-visit {
+  display: block;
+  padding-top: 9px;
+  border-top: 1px solid var(--line);
+  color: var(--green);
+  font-size: 0.53rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.quest-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 21px;
+  padding: 24px;
+  border: 2px solid #5b513d;
+  background:
+    linear-gradient(110deg, rgba(212, 173, 99, 0.07), transparent 52%),
+    var(--panel);
+  box-shadow: 5px 5px 0 var(--void);
+}
+
+.quest-icon {
+  display: grid;
+  width: 70px;
+  height: 70px;
+  place-items: center;
+  border: 1px solid var(--gold-dark);
+  background: #211e1a;
+}
+
+.quest-icon svg {
+  width: 39px;
+  height: 39px;
+  fill: none;
+  stroke: var(--gold);
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-width: 2;
+  shape-rendering: crispEdges;
+}
+
+.quest-type {
+  margin-bottom: 7px;
+  color: var(--gold);
+  font-size: 0.56rem;
+}
+
+h3 {
+  margin-bottom: 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.quest-copy > p:not(.quest-type) {
+  max-width: 620px;
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.quest-copy blockquote {
+  margin: 0;
+  color: var(--green);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.quest-reward {
+  padding: 7px 9px;
+  border: 1px solid var(--gold-dark);
+  color: var(--gold);
+  font-size: 0.55rem;
+  white-space: nowrap;
+}
+
+.secret-room {
+  margin-top: 13px;
+  border: 1px dashed var(--line);
+  background: rgba(21, 26, 36, 0.65);
+}
+
+.secret-room summary {
+  padding: 12px 15px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.67rem;
+  list-style: none;
+}
+
+.secret-room summary::-webkit-details-marker {
+  display: none;
+}
+
+.secret-room summary span {
+  margin-right: 8px;
+  color: var(--gold);
+}
+
+.secret-room[open] summary {
+  color: var(--gold);
+}
+
+.secret-room p {
+  margin: 0;
+  padding: 0 15px 14px 36px;
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.inventory-area {
+  padding: 32px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(140deg, rgba(121, 140, 179, 0.06), transparent 60%),
+    var(--night);
+  box-shadow: 5px 5px 0 var(--void);
+}
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.item-card {
+  position: relative;
+  display: flex;
+  min-height: 265px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 17px;
+  border: 1px solid #3e4850;
+  background: var(--panel);
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--green-dark);
+}
+
+.item-number {
+  color: var(--muted);
+  font-size: 0.52rem;
+}
+
+.item-art {
+  display: grid;
+  width: 75px;
+  height: 75px;
+  align-self: center;
+  place-items: center;
+  margin: 14px 0;
+  border: 1px solid #4c583f;
+  background:
+    linear-gradient(45deg, transparent 46%, rgba(156, 175, 112, 0.1) 47%, rgba(156, 175, 112, 0.1) 53%, transparent 54%),
+    #101610;
+  color: var(--green-bright);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+  text-shadow: 0 0 15px rgba(156, 175, 112, 0.6);
+  image-rendering: pixelated;
+}
+
+.css-art {
+  border-color: #62543b;
+  background:
+    linear-gradient(45deg, transparent 46%, rgba(212, 173, 99, 0.1) 47%, rgba(212, 173, 99, 0.1) 53%, transparent 54%),
+    #17140f;
+  color: var(--gold);
+}
+
+.locked-art {
+  border-color: var(--line);
+  background: #12141a;
+  color: #747986;
+  text-shadow: none;
+}
+
+.item-card h3 {
+  margin-bottom: 1px;
+  font-size: 1.25rem;
+}
+
+.item-type {
+  margin-bottom: 9px;
+  color: var(--gold);
+  font-size: 0.52rem;
+}
+
+.item-card > p:not(.item-type) {
+  margin-bottom: 15px;
+  color: var(--muted);
+  font-size: 0.66rem;
+}
+
+.item-rarity {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: auto;
+  color: var(--green);
+  font-size: 0.5rem;
+}
+
+.item-rarity i {
+  width: 5px;
+  height: 5px;
+}
+
+.locked-card .item-rarity {
+  color: #858995;
+}
+
+.locked-card .item-rarity i {
+  background: #747986;
+  box-shadow: none;
+}
+
+.guild-area {
+  position: relative;
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 26px;
+  margin-bottom: 74px;
+  padding: 32px;
+  border: 2px solid var(--line);
+  background: linear-gradient(120deg, #171d23, #11151b);
+  box-shadow: 5px 5px 0 var(--void);
+}
+
+.guild-emblem {
+  display: grid;
+  width: 88px;
+  height: 88px;
+  place-items: center;
+  border: 2px solid var(--gold-dark);
+  background: #1d1a17;
+  color: var(--gold);
+  font-size: 3.5rem;
+  text-shadow: 0 0 20px rgba(212, 173, 99, 0.45);
+  clip-path: polygon(50% 0, 94% 25%, 94% 75%, 50% 100%, 6% 75%, 6% 25%);
+}
+
+.guild-area h2 {
+  margin-bottom: 10px;
+}
+
+.guild-area p {
+  margin-bottom: 18px;
+}
+
+.contact-avatar {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--gold-dark);
+  image-rendering: pixelated;
+  object-fit: cover;
+}
+
+.guild-stamp {
+  padding: 9px 11px;
+  transform: rotate(8deg);
+  border: 2px solid var(--red, #a45d55);
+  color: var(--red, #a45d55);
+  font-size: 0.57rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.site-footer {
+  min-height: 78px;
+  gap: 14px;
+  color: var(--muted);
+  font-size: 0.57rem;
+  letter-spacing: 0.08em;
+}
+
+.site-footer i {
+  padding: 0 5px;
+  color: var(--gold);
+  font-style: normal;
+}
+
+.site-footer .validation-link {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  color: var(--green);
+}
+
+.validation-link svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.site-footer .validation-link:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.site-footer .validation-link:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@keyframes rune-glow {
+  0%,
+  100% {
+    opacity: 0.65;
+    filter: brightness(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    filter: brightness(1.5);
+  }
+}
+
+@media (max-width: 820px) {
+  body {
+    padding: 0 22px;
+  }
+
+  .game-screen {
+    padding-right: 28px;
+    padding-left: 28px;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(250px, 0.9fr);
+    gap: 22px;
+  }
+
+  .quest-card {
+    grid-template-columns: 60px minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .quest-icon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .quest-reward {
+    grid-column: 2;
+    width: fit-content;
+  }
+}
+
+@media (max-width: 620px) {
+  body {
+    padding: 0 14px;
+  }
+
+  .topbar {
+    min-height: 72px;
+    gap: 10px;
+  }
+
+  .brand {
+    gap: 7px;
+    font-size: 0.68rem;
+  }
+
+  .brand-crest {
+    width: 34px;
+    height: 36px;
+    font-size: 0.72rem;
+  }
+
+  .brand small {
+    font-size: 0.49rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 3px 11px;
+  }
+
+  nav a {
+    font-size: 0.56rem;
+  }
+
+  .save-status {
+    display: none;
+  }
+
+  .game-screen {
+    margin-top: 22px;
+    margin-bottom: 65px;
+    padding: 16px 19px 0;
+  }
+
+  .hud {
+    min-height: 56px;
+    gap: 9px;
+    padding-bottom: 12px;
+  }
+
+  .player-avatar {
+    width: 31px;
+    height: 31px;
+  }
+
+  .player-info {
+    gap: 7px;
+  }
+
+  .player-info strong {
+    font-size: 0.59rem;
+  }
+
+  .player-info small {
+    font-size: 0.45rem;
+  }
+
+  .xp-info {
+    width: min(150px, 41%);
+    gap: 2px 5px;
+    font-size: 0.47rem;
+  }
+
+  .xp-info > small {
+    font-size: 0.45rem;
+  }
+
+  .hud-rune {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 23px;
+    padding: 36px 0 27px;
+  }
+
+  h1 {
+    font-size: clamp(3.35rem, 15vw, 5.4rem);
+  }
+
+  .world-art {
+    width: min(100%, 420px);
+    justify-self: center;
+  }
+
+  .screen-footer {
+    font-size: 0.47rem;
+  }
+
+  .quest-area,
+  .projects-area,
+  .inventory-area {
+    margin-bottom: 64px;
+  }
+
+  .quest-card {
+    grid-template-columns: 1fr;
+    gap: 13px;
+    padding: 17px;
+  }
+
+  .quest-icon {
+    width: 49px;
+    height: 49px;
+  }
+
+  .quest-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .quest-reward {
+    grid-column: 1;
+  }
+
+  .inventory-area {
+    padding: 21px 17px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-scene {
+    height: 175px;
+  }
+
+  .inventory-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .item-card {
+    display: grid;
+    min-height: auto;
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 0 13px;
+    padding: 14px;
+  }
+
+  .item-number {
+    grid-column: 1 / -1;
+    margin-bottom: 5px;
+  }
+
+  .item-art {
+    width: 65px;
+    height: 65px;
+    grid-row: span 4;
+    margin: 0 0 4px;
+  }
+
+  .item-card h3 {
+    align-self: end;
+    margin: 0;
+  }
+
+  .item-type {
+    margin-bottom: 4px;
+  }
+
+  .item-card > p:not(.item-type) {
+    margin-bottom: 7px;
+  }
+
+  .item-rarity {
+    grid-column: 2;
+  }
+
+  .guild-area {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 15px;
+    margin-bottom: 55px;
+    padding: 20px 16px;
+  }
+
+  .guild-emblem {
+    width: 55px;
+    height: 55px;
+    font-size: 2.3rem;
+  }
+
+  .guild-stamp {
+    display: none;
+  }
+
+  .guild-area h2 {
+    font-size: 2rem;
+  }
+
+  .guild-area .pixel-button {
+    gap: 7px;
+    padding-right: 9px;
+    padding-left: 6px;
+    font-size: 0.6rem;
+  }
+
+  .site-footer {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 15px 0;
+    font-size: 0.49rem;
+  }
+
+  .site-footer > span:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
