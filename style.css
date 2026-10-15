@@ -555,60 +555,51 @@ h2 {
     linear-gradient(145deg, #273143, #171e2a 62%, #20271f);
 }
 
-.portfolio-preview .preview-scene {
+.simracing-preview .preview-scene {
   background:
-    linear-gradient(0deg, #273126 0, #273126 22%, transparent 22%),
-    radial-gradient(ellipse at 73% 25%, rgba(212, 173, 99, 0.24), transparent 31%),
-    linear-gradient(135deg, #273143, #171d29 65%, #24241f);
+    linear-gradient(0deg, #202a27 0, #202a27 32%, transparent 32%),
+    radial-gradient(ellipse at 75% 25%, rgba(212, 173, 99, 0.2), transparent 35%),
+    linear-gradient(135deg, #26333a, #171e27 65%, #24241f);
 }
 
-.preview-copy {
+.simracing-title {
   position: absolute;
   top: 23px;
   left: 22px;
-  display: grid;
-  gap: 5px;
-}
-
-.preview-copy i {
   color: var(--green);
-  font-size: 0.46rem;
-  font-style: normal;
-  letter-spacing: 0.14em;
-}
-
-.preview-copy b {
-  color: #e8e3d4;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   line-height: 1.1;
 }
 
-.preview-copy em {
-  width: 75px;
-  height: 3px;
-  background: #626a70;
-}
-
-.preview-copy em:last-child {
-  width: 51px;
-}
-
-.preview-avatar {
+.simracing-track {
   position: absolute;
-  right: 27px;
-  bottom: 20px;
+  right: -6%;
+  bottom: -25%;
+  width: 66%;
+  height: 90%;
+  transform: rotate(-25deg);
+  border: 12px solid #60656a;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px #272c30, 0 0 0 2px #272c30;
+}
+
+.simracing-car {
+  position: absolute;
+  right: 23%;
+  bottom: 42%;
   display: grid;
-  width: 51px;
-  height: 51px;
+  width: 32px;
+  height: 16px;
   place-items: center;
-  border: 2px solid var(--gold-dark);
-  background: #20252d;
-  color: var(--gold);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.4rem;
-  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.35);
+  transform: skew(-18deg);
+  background: var(--gold);
+  color: #17191d;
+  font-size: 0.48rem;
+  font-weight: 700;
+  box-shadow: 3px 3px 0 #11151b;
 }
 
 .web1-preview .preview-scene {
